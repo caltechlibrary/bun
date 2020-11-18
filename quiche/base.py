@@ -24,7 +24,7 @@ file "LICENSE" for more information.
 class UIBase:
     '''Base class for user interface classes.'''
 
-    def __init__(self, name, subtitle, use_gui, use_color, be_quiet):
+    def __init__(self, name, subtitle, show_banner, use_gui, use_color, be_quiet):
         ''''name' is the name of the application.  'subtitle' is a short
         string shown next to the name, in the form "name -- subtitle".
         'use_gui' indicates whether a GUI or CLI interface should be used.
@@ -33,11 +33,12 @@ class UIBase:
         Finally, 'be_quiet' also applies only to the CLI and, if True,
         indicates that informational messages should not be printed.
         '''
-        self._name      = name
-        self._subtitle  = subtitle
-        self._use_gui   = use_gui
-        self._use_color = use_color
-        self._be_quiet  = be_quiet
+        self._name        = name
+        self._subtitle    = subtitle
+        self._show_banner = show_banner
+        self._use_gui     = use_gui
+        self._use_color   = use_color
+        self._be_quiet    = be_quiet
 
 
     def is_gui(self):

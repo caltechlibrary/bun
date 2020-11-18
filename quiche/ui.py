@@ -30,7 +30,8 @@ class UI(UIBase):
 
     __instance = None
 
-    def __new__(cls, name, subtitle, use_gui = False, use_color = True, be_quiet = False):
+    def __new__(cls, name, subtitle = None, show_banner = True,
+                use_gui = False, use_color = True, be_quiet = False):
         '''Return an instance of the appropriate user interface handler.'''
         if cls.__instance is None:
             if use_gui:
@@ -38,7 +39,8 @@ class UI(UIBase):
                 obj = GUI
             else:
                 obj = CLI
-            cls.__instance = obj(name, subtitle, use_gui, use_color, be_quiet)
+            cls.__instance = obj(name, subtitle, show_banner,
+                                 use_gui, use_color, be_quiet)
         return cls.__instance
 
 

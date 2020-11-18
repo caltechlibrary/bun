@@ -1,7 +1,23 @@
+'''
+cli.py: command-line interface class for Quiche
+
+Authors
+-------
+
+Michael Hucka <mhucka@caltech.edu> -- Caltech Library
+
+Copyright
+---------
+
+Copyright (c) 2020 by the California Institute of Technology.  This code is
+open-source software released under a 3-clause BSD license.  Please see the
+file "LICENSE" for more information.
+'''
+
 import getpass
 from   queue import Queue
 from   rich import box
-from   rich.box import HEAVY
+from   rich.box import HEAVY, DOUBLE_EDGE, ASCII
 from   rich.console import Console
 from   rich.panel import Panel
 from   rich.style import Style
@@ -25,7 +41,8 @@ _CLI_THEME = Theme({
     'alert'       : 'red',
     'alert_fatal' : 'bold red',
     'fatal'       : 'bold red',
-    'highlight'   : 'bold chartreuse1',
+    'standout'    : 'bold green1',
+    'banner'      : 'green3',
 })
 
 
@@ -35,9 +52,8 @@ _CLI_THEME = Theme({
 class CLI(UIBase):
     '''Command-line interface.'''
 
-
-    def __init__(self, name, subtitle, use_gui, use_color, be_quiet):
-        UIBase.__init__(self, name, subtitle, use_gui, use_color, be_quiet)
+    def __init__(self, name, subtitle, show_banner, use_gui, use_color, be_quiet):
+        super().__init__(name, subtitle, show_banner, use_gui, use_color, be_quiet)
         if __debug__: log('initializing CLI')
         self._started = False
 
@@ -49,16 +65,17 @@ class CLI(UIBase):
         self._console = Console(theme = _CLI_THEME,
                                 color_system = "auto" if use_color else None)
 
-        if not be_quiet:
+        if show_banner and not be_quiet:
             # We need the plain_text version in any case, to calculate length.
             plain_text = f'Welcome to {name}: {subtitle}'
-            fancy_text = f'Welcome to [bold chartreuse1]{name}[/]: {subtitle}'
-            text = fancy_text if self._use_color else plain_text
+            fancy_text = f'Welcome to [standout]{name}[/]: {subtitle}'
+            text = fancy_text if use_color else plain_text
             terminal_width = shutil.get_terminal_size().columns or 80
             padding = (terminal_width - len(plain_text) - 2) // 2
             # Queueing up this message now will make it the 1st thing printed.
-            self._print_or_queue(Panel(text, style = 'green3', box = HEAVY,
-                                       padding = (0, padding)), style = 'green3')
+            box_style = DOUBLE_EDGE if use_color else ASCII
+            self._print_or_queue(Panel(text, style = 'banner', box = box_style,
+                                       padding = (0, padding)), style = 'info')
 
 
     def start(self):
