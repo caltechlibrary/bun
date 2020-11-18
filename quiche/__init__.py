@@ -22,7 +22,7 @@ file "LICENSE" for more information.
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
 __version__     = '0.0.1'
-__description__ = 'Quintessential UI Class HiErarchy'
+__description__ = 'A small Python package for a basic user interface'
 __url__         = 'https://github.com/caltechlibrary/quiche'
 __author__      = 'Michael Hucka'
 __email__       = 'mhucka@caltech.edu'
