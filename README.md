@@ -1,7 +1,7 @@
-Template for software repositories by the Caltech Library
-=====================================================
+Quiche<img width="11%" align="right" src="https://raw.githubusercontent.com/caltechlibrary/quiche/main/.graphics/quiche-logo.png">
+======
 
-This is a template README file for software repositories.  This first paragraph of the README should summarize your software in a concise fashion, preferably using no more than one or two sentences.
+Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is a small Python package for very basic user interactions.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/template.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/template/releases)
@@ -24,55 +24,58 @@ Table of contents
 Introduction
 ------------
 
-This repository is a GitHub template repostory for creating software project repositories at the Caltech Library.  The [associated wiki page](https://github.com/caltechlibrary/template/wiki/Using-this-template-repo) explains how to use the template repository.
+This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing informational messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code such as
 
-This README file is in Markdown format, and is meant to provide a template for README files as well an illustration of what the README file can be expected to look like.  For a software project, this [Introduction](#introduction) section &ndash; which you are presently reading &ndash; should provide background for the project, a brief explanation of what the project is about, and optionally, pointers to resources that can help orient readers.  Ideally, this section should be short.
+```python
+if not writable(dest_dir):
+    alert(f'Cannot write output in {dest_dir}.')
+    return
+if not results:
+    warn(f'Nothing to do for {item}')
+    return
+```
+
+By necessity, Quiche is simple and limited in functionality, as well as being somewhat opinionated in its approach, but it satisfies the needs of many programs.  Many user interface packages already exist for Python, but their use requires configuration and more complicated code to use.  Quiche wraps packages such as [Rich](https://rich.readthedocs.io/en/latest/) and [wxPython](https://wxpython.org) to provide simple high-level calls.
 
 
 Installation
 ------------
 
-Begin this section by mentioning any prerequisites that may be important for users to have before they can use your software.  Examples include hardware and operating system requirements.
+The instructions below assume you have a Python interpreter installed on your computer; if that's not the case, please first [install Python version 3](INSTALL-Python3.md) and familiarize yourself with running Python programs on your system.
 
-Next, provide step-by-step instructions for installing the software, preferably with command examples that can be copy-pasted by readers into their software environments. For example:
-
-```bash
-a command-line command here
+On **Linux**, **macOS**, and **Windows** operating systems, you should be able to install `quiche` with [`pip`](https://pip.pypa.io/en/stable/installing/).  To install `quiche` from the [Python package repository (PyPI)](https://pypi.org), run the following command:
+```
+python3 -m pip install quiche
 ```
 
-Sometimes, subsections may be needed for different operating systems or particularly complicated installations.
+As an alternative to getting it from [PyPI](https://pypi.org), you can use `pip` to install `quiche` directly from GitHub, like this:
+```sh
+python3 -m pip install git+https://github.com/caltechlibrary/quiche.git
+```
  
 
 Usage
 -----
 
-This [Usage](#usage) section would explain more about how to run the software, what kind of behavior to expect, and so on.
-
-### _Basic operation_
-
-Begin with the simplest possible example of how to use your software.  Provide example command lines and/or screen images, as appropriate, to help readers understand how the software is expected to be used.  Many readers are likely to look for command lines they can copy-paste directly from your explanations, so it's best to keep that in mind as you write examples.
-
-### _Additional options_
-
-Some projects need to communicate additional information to users and can benefit from additional sections in the README file.  It's difficult to give specific instructions &ndash; a lot depends on your software, your intended audience, etc.  Use your judgement and ask for feedback from users or colleagues to help figure out what else is worth explaining.
+[_... forthcoming ..._]
 
 
 Known issues and limitations
 ----------------------------
 
-In this section, summarize any notable issues and/or limitations of your software.  If none are known yet, this section can be omitted (and don't forget to remove the corresponding entry in the [Table of Contents](#table-of-contents) too); alternatively, you can leave this section in and write something along the lines of "none are known at this time".
+[_... forthcoming ..._]
 
 
 Getting help
 ------------
 
-Inform readers of how they can contact you, or at least how they can report problems they may encounter.  This may simply be a request to use the issue tracker on your repository, but many projects have associated chat or mailing lists, and this section is a good place to mention those.
+If you find an issue, please submit it in [the GitHub issue tracker](https://github.com/caltechlibrary/quiche/issues) for this repository.
 
 
 Contributing
 ------------
 
-This section is optional; if your repository is for a project that accepts open-source contributions, then this section is where you can mention how people can offer contributions, and point them to your guidelines for contributing.  (If you delete this section, don't forget to remove the corresponding entry in the [Table of Contents](#table-of-contents) too.)
+We would be happy to receive your help and participation with enhancing Quiche!  Please visit the [guidelines for contributing](CONTRIBUTING.md) for some tips on getting started.
 
 
 License
@@ -84,7 +87,7 @@ Software produced by the Caltech Library is Copyright (C) 2020, Caltech.  This s
 Authors and history
 ---------------------------
 
-In this section, list the authors and contributors to your software project.  Adding additional notes here about the history of the project can make it more interesting and compelling.  This is also a place where you can acknowledge other contributions to the work and the use of other people's software or tools.
+I developed the first version of this code while implementing [Holdit](https://github.com/caltechlibrary/holdit).  I started using the code in essentially every Python software package I have written since then, first by copy-pasting the code (which was initially very short) and eventually creating a single-file module (named `ui.py`).  This was obviously a suboptimal approach.  Finally, in 2020, I decided it was time to break it out into a proper self-contained Python package.
 
 
 Acknowledgments
@@ -92,11 +95,9 @@ Acknowledgments
 
 This work was funded by the California Institute of Technology Library.
 
-(If this work was also supported by other organizations, acknowledge them here.  In addition, if your work relies on software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.)
-
 <div align="center">
   <br>
   <a href="https://www.caltech.edu">
-    <img width="100" height="100" src=".graphics/caltech-round.svg">
+    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/quiche/main/.graphics/caltech-round.png">
   </a>
 </div>
