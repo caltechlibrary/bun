@@ -1,9 +1,7 @@
-Change log for REPOSITORY
-=========================
+Change log for Quiche
+=====================
 
-Version 0.0.0
+Version 0.0.1
 -------------
 
-* Write about a change here
-* Write about another change here
-* Write about a 3rd change
+Initial repository creation and addition of code from other projects.
