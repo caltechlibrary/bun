@@ -1,10 +1,10 @@
-Quiche<img width="11%" align="right" src="https://raw.githubusercontent.com/caltechlibrary/quiche/main/.graphics/quiche-logo.png">
-======
+Quiche<img width="11%" align="right" src="https://github.com/caltechlibrary/quiche/raw/main/.graphics/quiche-logo.png">
+===========================================================================
 
-Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is a small Python package for very basic user interactions.
+Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is a small Python package for a basic user interface.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
-[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/template.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/template/releases)
+[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/quiche.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/quiche/releases)
 
 
 Table of contents
@@ -24,18 +24,22 @@ Table of contents
 Introduction
 ------------
 
-This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing informational messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code such as
+This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing color-coded messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Quiche (_**Q**uintessential **UI** **C**lass **H**i**E**rarchy_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code like this:
 
 ```python
-if not writable(dest_dir):
-    alert(f'Cannot write output in {dest_dir}.')
-    return
-if not results:
-    warn(f'Nothing to do for {item}')
-    return
+if writable(dest_dir):
+    inform(f'Will write output to {dest_dir}.')
+else:
+    alert(f'Output destination {dest_dir} is not writable.')
 ```
 
-By necessity, Quiche is simple and limited in functionality, as well as being somewhat opinionated in its approach, but it satisfies the needs of many programs.  Many user interface packages already exist for Python, but their use requires configuration and more complicated code to use.  Quiche wraps packages such as [Rich](https://rich.readthedocs.io/en/latest/) and [wxPython](https://wxpython.org) to provide simple high-level calls.
+By necessity, Quiche is simple and limited in functionality, as well as being somewhat opinionated in its design, but it satisfies the needs of many programs.  Quiche wraps packages such as [Rich](https://rich.readthedocs.io/en/latest/) and [wxPython](https://wxpython.org) to provide simple high-level calls.  Here is some sample output from an application that uses Quiche:
+
+<p align="center">
+<img src="https://github.com/caltechlibrary/quiche/raw/main/.graphics/cli-output-example.png">
+</p>
+
+Many user interface packages already exist for Python, but their use requires configuration and more complicated code to use.  Quiche aims to be simpler. 
 
 
 Installation
@@ -94,6 +98,8 @@ Acknowledgments
 ---------------
 
 This work was funded by the California Institute of Technology Library.
+
+The [vector artwork](https://thenounproject.com/search/?q=quiche&i=1529315) of a quiche, used as the icon for this repository, was created by [Made by Made, AU](https://thenounproject.com/made.somewhere/) from the Noun Project.  It is licensed under the Creative Commons [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/) license.
 
 <div align="center">
   <br>
