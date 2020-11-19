@@ -1,4 +1,5 @@
-'''ui.py: user interface
+'''
+gui.py: graphical user interface class for Quiche
 
 Explanation of the architecture
 -------------------------------
@@ -65,6 +66,12 @@ from   wx.lib.dialogs import ScrolledMessageDialog
 import wx.richtext
 import sys
 
+if __debug__:
+    from sidetrack import set_debug, log, logr
+
+from .base import UIBase
+from .app_frame import AppFrame
+
 
 # Exported classes.
 # .............................................................................
@@ -72,8 +79,8 @@ import sys
 class GUI(UIBase):
     '''Graphical user interface.'''
 
-    def __init__(self, name, subtitle, use_gui, use_color, be_quiet):
-        super().__init__(name, subtitle, use_gui, use_color, be_quiet)
+    def __init__(self, name, subtitle, show_banner, use_gui, use_color, be_quiet):
+        super().__init__(name, subtitle, show_banner, use_gui, use_color, be_quiet)
 
         # Initialize our main GUI window.
         self._app = wx.App()
@@ -131,7 +138,7 @@ class GUI(UIBase):
 
     def file_selection(self, type, message, pattern):
         return_queue = Queue()
-        if __debug__: log('sending message to {}_file', type)
+        if __debug__: log(f'sending message to {type} file')
         if type == 'open':
             wx.CallAfter(pub.sendMessage, 'open_file', return_queue = return_queue,
                          message = message, pattern = pattern)
@@ -193,7 +200,7 @@ class GUI(UIBase):
     def _ask_yes_no(self, question):
         '''Display a yes/no dialog.'''
         frame = self._current_frame()
-        dlg = wx.GenericMessageDialog(frame, question, caption = "Check It!",
+        dlg = wx.GenericMessageDialog(frame, question, caption = self._name,
                                       style = wx.YES_NO | wx.ICON_QUESTION)
         clicked = dlg.ShowModal()
         dlg.Destroy()
@@ -208,7 +215,7 @@ class GUI(UIBase):
         frame = self._current_frame()
         icon = wx.ICON_WARNING if severity == 'warn' else wx.ICON_INFORMATION
         dlg = wx.GenericMessageDialog(frame, text.format(*args),
-                                      caption = "Check It!", style = wx.OK | icon)
+                                      caption = self._name, style = wx.OK | icon)
         clicked = dlg.ShowModal()
         dlg.Destroy()
         frame.Destroy()
@@ -228,11 +235,11 @@ class GUI(UIBase):
             extra_text = ''
         if details:
             style |= wx.HELP
-        caption = "Check It! has encountered a {}problem".format(extra_text)
+        caption = self._name + f" has encountered a {extra_text}problem"
         dlg = wx.MessageDialog(frame, message = short, style = style, caption = caption)
         clicked = dlg.ShowModal()
         if clicked == wx.ID_HELP:
-            body = ("Check It! has encountered a problem:\n"
+            body = (self._name + " has encountered a problem:\n"
                     + "─"*30
                     + "\n{}\n".format(details or text)
                     + "─"*30
@@ -240,8 +247,7 @@ class GUI(UIBase):
                     + "similar transient error, then please quit and try again "
                     + "later. If you don't know why the error occurred or "
                     + "if it is beyond your control, please also notify the "
-                    + "developers. You can reach the developers via email:\n\n"
-                    + "    Email: mhucka@library.caltech.edu\n")
+                    + "developers.\n")
             info = ScrolledMessageDialog(frame, body, "Error")
             info.ShowModal()
             info.Destroy()
