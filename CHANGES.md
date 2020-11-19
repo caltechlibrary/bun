@@ -1,7 +1,13 @@
 Change log for Quiche
 =====================
 
+Version 0.0.2
+-------------
+
+Add basic GUI code originally developed for other programs.  It is almost functional.
+
+
 Version 0.0.1
 -------------
 
-Initial repository creation and addition of code from other projects.
+First release.
