@@ -6,7 +6,7 @@
   "codeRepository": "https://github.com/caltechlibrary/quiche",
   "issueTracker": "https://github.com/caltechlibrary/quiche/issues",
   "license": "https://github.com/caltechlibrary/quiche/blob/master/LICENSE",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": [
     {
       "@type": "Person",
