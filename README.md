@@ -6,7 +6,7 @@ Bun (_**B**asic **U**ser I**n**terface_) is a small Python package for a basic u
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/bun.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/bun/releases)
 [![Python](https://img.shields.io/badge/Python-3.6+-brightgreen.svg?style=flat-square)](http://shields.io)
-[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&color=lightgray&query=$.metadata.doi&uri=https://data.caltech.edu/api/record/1679)](https://data.caltech.edu/records/1679)
+[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&color=lightgray&query=$.metadata.doi&uri=https://data.caltech.edu/api/record/1683)](https://data.caltech.edu/records/1683)
 [![PyPI](https://img.shields.io/pypi/v/bun.svg?style=flat-square&color=orange)](https://pypi.org/project/bun/)
 
 Table of contents
