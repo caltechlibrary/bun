@@ -1,4 +1,4 @@
-Bun<img width="11%" align="right" src="https://github.com/caltechlibrary/bun/raw/main/.graphics/bun-logo.png">
+Bun<img width="11%" align="right" src="https://github.com/caltechlibrary/bun/raw/main/.graphics/bun-icon.png">
 ===========================================================================
 
 Bun (_**B**asic **U**ser I**n**terface_) is a small Python package for a basic user interface.
