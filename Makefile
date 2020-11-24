@@ -4,7 +4,7 @@
 # @author  Michael Hucka
 # @date    2020-08-11
 # @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/quiche
+# @website https://github.com/caltechlibrary/bun
 # =============================================================================
 
 # Before we go any further, test if certain programs are available.
