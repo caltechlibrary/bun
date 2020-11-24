@@ -1,5 +1,5 @@
 '''
-ui_base.py: base classes for Quiche
+ui_base.py: base classes for Bun
 
 Authors
 -------

@@ -1,5 +1,5 @@
 '''
-cli.py: command-line interface class for Quiche
+cli.py: command-line interface class for Bun
 
 Authors
 -------
