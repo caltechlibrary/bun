@@ -8,7 +8,7 @@ try:
 except:
     sys.path.append('..')
 
-from quiche import UI, inform, warn, alert, alert_fatal
+from bun import UI, inform, warn, alert, alert_fatal
 
 
 def test_quiet(capsys):

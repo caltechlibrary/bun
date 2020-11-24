@@ -1,5 +1,5 @@
 '''
-cli.py: main interface class for Quiche
+cli.py: main interface class for Bun
 
 Authors
 -------

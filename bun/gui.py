@@ -1,5 +1,5 @@
 '''
-gui.py: graphical user interface class for Quiche
+gui.py: graphical user interface class for Bun
 
 Explanation of the architecture
 -------------------------------

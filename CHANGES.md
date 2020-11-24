@@ -1,5 +1,11 @@
-Change log for Quiche
+Change log for Bun
 =====================
+
+Version 0.0.3
+-------------
+
+Renamed this project **Bun** to avoid a PyPI project name collision with the former name, Quiche.
+
 
 Version 0.0.2
 -------------
