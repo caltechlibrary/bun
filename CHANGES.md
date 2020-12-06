@@ -1,6 +1,12 @@
 Change log for Bun
 =====================
 
+Version 0.0.4
+-------------
+
+Use `antiformat` in certain places to guard against incoming strings that may have single `{` and/or `}` characters. The latter causes errors when they're passed to Python's string `format`.
+
+
 Version 0.0.3
 -------------
 
