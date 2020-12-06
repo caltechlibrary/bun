@@ -21,8 +21,8 @@ file "LICENSE" for more information.
 #  |    by the Makefile. Manual changes to these values will be lost.      |
 #  ╰────────────────────── Notice ── Notice ── Notice ─────────────────────╯
 
-__version__     = '0.0.3'
-__description__ = 'A Python package for a basic user interface'
+__version__     = '0.0.4'
+__description__ = 'A Python package for a basic CLI and GUI user interface'
 __url__         = 'https://github.com/caltechlibrary/bun'
 __author__      = 'Michael Hucka'
 __email__       = 'mhucka@caltech.edu'

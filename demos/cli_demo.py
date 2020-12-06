@@ -9,14 +9,14 @@ try:
 except:
     sys.path.append('..')
 
-from quiche import UI, inform, warn, alert, alert_fatal
+from bun import UI, inform, warn, alert, alert_fatal
 
-# Initialize Quiche ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Initialize Bun ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ui = UI('demo', 'A demonstration of Quiche')
+ui = UI('demo', 'A demonstration of Bun')
 ui.start()
 
-# Demo some Quiche functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Demo some Bun functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 inform('This is an informational message')
 warn('This is a warning')
