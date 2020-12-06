@@ -14,6 +14,7 @@ open-source software released under a 3-clause BSD license.  Please see the
 file "LICENSE" for more information.
 '''
 
+from   commonpy.string_utils import antiformat
 import getpass
 from   queue import Queue
 from   rich import box
@@ -95,10 +96,10 @@ class CLI(UIBase):
 
     def _print_or_queue(self, text, style):
         if self._started:
-            if __debug__: log(text)
+            if __debug__: log(antiformat(text))
             self._console.print(text, style = style, highlight = False)
         else:
-            if __debug__: log(f'queueing message "{text}"')
+            if __debug__: log(f'queueing message "{antiformat(text)}"')
             self._queue.put((text, style))
 
 
