@@ -89,3 +89,4 @@ __pycache__
 *.bak
 build
 dist
+bun.egg-info
