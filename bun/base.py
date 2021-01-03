@@ -70,5 +70,6 @@ class UIBase:
     # Methods to ask the user -------------------------------------------------
 
     def file_selection(self, type, purpose, pattern): raise NotImplementedError
+    def validated_input(self, msg, dflt, is_valid):   raise NotImplementedError
     def login_details(self, prompt, user, pswd):      raise NotImplementedError
     def confirm(self, question):                      raise NotImplementedError

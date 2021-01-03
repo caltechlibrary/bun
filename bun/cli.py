@@ -140,7 +140,7 @@ class CLI(UIBase):
 
 
     def confirm(self, question):
-        '''Asks a yes/no question of the user, on the command line.'''
+        '''Ask a yes/no question of the user, on the command line.'''
         return input(f'{question} (y/n) ').startswith(('y', 'Y'))
 
 
@@ -150,7 +150,7 @@ class CLI(UIBase):
 
 
     def login_details(self, prompt, user = None, pswd = None):
-        '''Returns a tuple of user, password, and a Boolean indicating
+        '''Return a tuple of user, password, and a Boolean indicating
         whether the user cancelled the dialog.  If 'user' is provided, then
         this method offers that as a default for the user.  If both 'user'
         and 'pswd' are provided, both the user and password are offered as
@@ -172,6 +172,23 @@ class CLI(UIBase):
             return final_user, final_pswd, False
         except KeyboardInterrupt:
             return user, pswd, True
+
+
+    def validated_input(self, message, default_value, is_valid):
+        '''Get validated input from the user, optionally with a default value.'''
+        while True:
+            if __debug__: log(f'asking user: "{message} [{default_value}]"')
+            default = (' [' + default_value + ']') if default_value else ''
+            value = input(message + default + ': ')
+            if default_value and value == '':
+                if __debug__: log(f'user chose default value "{default_value}"')
+                return default_value
+            elif is_valid(value):
+                if __debug__: log(f'got "{value}" from user')
+                return value
+            else:
+                self.alert(f'"{value}" does not appear valid for {message}')
+                return None
 
 
 # Miscellaneous utilities

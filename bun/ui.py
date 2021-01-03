@@ -113,6 +113,12 @@ def file_selection(type, purpose, pattern = '*'):
     return ui.file_selection(type, purpose, pattern)
 
 
+def validated_input(message, default_value, is_valid):
+    '''Get validated input from the user, optionally with a default value.'''
+    ui = UI.instance()
+    return ui.validated_input(message, default_value, is_valid)
+
+
 def login_details(prompt, user, password):
     '''Asks the user for a login name and password.  The value of 'user' and
     'password' will be used as initial values in the dialog.
