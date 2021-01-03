@@ -1,7 +1,7 @@
 Bun<img width="11%" align="right" src="https://github.com/caltechlibrary/bun/raw/main/.graphics/bun-icon.png">
 ===========================================================================
 
-Bun (_**B**asic **U**ser I**n**terface_) is a small Python package for a basic user interface.
+Bun (_**B**asic **u**ser i**n**terface_) is a small Python package for a basic user interface.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/bun.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/bun/releases)
@@ -26,7 +26,7 @@ Table of contents
 Introduction
 ------------
 
-This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing color-coded messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Bun (_**B**asic **U**ser I**n**terface_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code like this:
+This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing color-coded messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Bun (_**B**asic **u**ser i**n**terface_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code like this:
 
 ```python
 if writable(dest_dir):
