@@ -69,7 +69,7 @@ Usage
 Known issues and limitations
 ----------------------------
 
-[_... forthcoming ..._]
+As of version 0.0.5, the code for the GUI version is currently not included in the released version of Bun.  The original code is in fact used by some applications, but the generalization and incorporation of that code into Bun is incomplete, so until more work is done, the GUI code is kept in a separate git branch (`gui`).
 
 
 Getting help
