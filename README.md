@@ -1,12 +1,12 @@
 Bun<img width="11%" align="right" src="https://github.com/caltechlibrary/bun/raw/main/.graphics/bun-icon.png">
 ===========================================================================
 
-Bun (_**B**asic **U**ser I**n**terface_) is a small Python package for a basic user interface.
+Bun (_**B**asic **u**ser i**n**terface_) is a small Python package for a basic user interface.
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/bun.svg?style=flat-square&color=b44e88)](https://github.com/caltechlibrary/bun/releases)
 [![Python](https://img.shields.io/badge/Python-3.6+-brightgreen.svg?style=flat-square)](http://shields.io)
-[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&color=lightgray&query=$.metadata.doi&uri=https://data.caltech.edu/api/record/1698)](https://data.caltech.edu/records/1698)
+[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&color=lightgray&query=$.metadata.doi&uri=https://data.caltech.edu/api/record/1839)](https://data.caltech.edu/records/1839)
 [![PyPI](https://img.shields.io/pypi/v/bun.svg?style=flat-square&color=orange)](https://pypi.org/project/bun/)
 
 Table of contents
@@ -26,7 +26,7 @@ Table of contents
 Introduction
 ------------
 
-This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing color-coded messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Bun (_**B**asic **U**ser I**n**terface_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code like this:
+This package grew out of a desire to satisfy two goals simultaneously: (1) have the simplest possible coding interface for printing color-coded messages and getting basic information from the user; and (2) let the user choose to use a command-line interface (CLI) or a graphical user interface (GUI) at run time.  Bun (_**B**asic **u**ser i**n**terface_) is the result.  It provides functions such as `inform`, `warn`, `alert` and others, which you can use in code like this:
 
 ```python
 if writable(dest_dir):
@@ -69,7 +69,7 @@ Usage
 Known issues and limitations
 ----------------------------
 
-[_... forthcoming ..._]
+As of version 0.0.5, the code for the GUI version is currently not included in the released version of Bun.  The original code is in fact used by some applications, but the generalization and incorporation of that code into Bun is incomplete, so until more work is done, the GUI code is kept in a separate git branch (`gui`).
 
 
 Getting help

@@ -1,6 +1,12 @@
 Change log for Bun
 =====================
 
+Version 0.0.5
+-------------
+
+This version removes the as-yet unfinished GUI code (and associated dependencies from `requirements.txt`). The code is now in a separate branch (`gui`) pending further development in the future.
+
+
 Version 0.0.4
 -------------
 
