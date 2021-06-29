@@ -94,7 +94,8 @@ class CLI(UIBase):
             fancy_text = f'Welcome to [standout]{name}[/]: {subtitle}'
             text = fancy_text if use_color else plain_text
             terminal_width = shutil.get_terminal_size().columns or 80
-            padding = (terminal_width - len(plain_text) - 2) // 2
+            odd_adjustment = 0 if (terminal_width % 2 == 0) else 2
+            padding = (terminal_width - len(plain_text) - 2 - odd_adjustment) // 2
             # Queueing up this message now will make it the 1st thing printed.
             box_style = DOUBLE_EDGE if use_color else ASCII
             self._print_or_queue(Panel(text, style = 'banner', box = box_style,
