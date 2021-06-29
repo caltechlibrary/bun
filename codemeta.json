@@ -6,7 +6,7 @@
   "codeRepository": "https://github.com/caltechlibrary/bun",
   "issueTracker": "https://github.com/caltechlibrary/bun/issues",
   "license": "https://github.com/caltechlibrary/bun/blob/master/LICENSE",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": [
     {
       "@type": "Person",
