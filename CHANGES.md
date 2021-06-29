@@ -1,5 +1,10 @@
 # Change log for Bun
 
+## Version 0.0.7
+
+This version slightly tweaks the colors, again, for Windows.
+
+
 ## Version 0.0.6
 
 This release tweaks the default colors a little bit and adds a new function, `validated_input(...)`. It also fixes a banner text centering bug.
