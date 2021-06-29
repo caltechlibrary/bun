@@ -46,6 +46,9 @@ from .base import UIBase
 # So here I'm trying to find some compromise that will work in most cases.
 
 if sys.platform.startswith('win'):
+    # Note: Microsoft's Terminal (and I guess some others on Windows) can't show
+    # bold (2021-06-29). C.f. https://github.com/microsoft/terminal/issues/109
+    # The following style still uses bold in case that changes in the future.
     _CLI_THEME = Theme({
         'info'        : 'green3',
         'warn'        : 'orange1',
@@ -53,7 +56,7 @@ if sys.platform.startswith('win'):
         'alert'       : 'red',
         'alert_fatal' : 'bold red',
         'fatal'       : 'bold red',
-        'standout'    : 'bold green1',
+        'standout'    : 'bold dark_sea_green2',
         'banner'      : 'green3',
     })
 else:
