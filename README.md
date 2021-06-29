@@ -51,12 +51,12 @@ The instructions below assume you have a Python interpreter installed on your co
 
 On **Linux**, **macOS**, and **Windows** operating systems, you should be able to install `bun` with [`pip`](https://pip.pypa.io/en/stable/installing/).  To install `bun` from the [Python package repository (PyPI)](https://pypi.org), run the following command:
 ```
-python3 -m pip install bun
+python3 -m pip install bun --upgrade
 ```
 
 As an alternative to getting it from [PyPI](https://pypi.org), you can use `pip` to install `bun` directly from GitHub, like this:
 ```sh
-python3 -m pip install git+https://github.com/caltechlibrary/bun.git
+python3 -m pip install git+https://github.com/caltechlibrary/bun.git --upgrade
 ```
  
 

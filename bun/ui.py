@@ -9,8 +9,8 @@ Michael Hucka <mhucka@caltech.edu> -- Caltech Library
 Copyright
 ---------
 
-Copyright (c) 2020 by the California Institute of Technology.  This code is
-open-source software released under a 3-clause BSD license.  Please see the
+Copyright (c) 2020-2021 by the California Institute of Technology.  This code
+is open-source software released under a 3-clause BSD license.  Please see the
 file "LICENSE" for more information.
 '''
 
@@ -111,6 +111,12 @@ def file_selection(type, purpose, pattern = '*'):
     '''
     ui = UI.instance()
     return ui.file_selection(type, purpose, pattern)
+
+
+def validated_input(message, default_value, is_valid):
+    '''Get validated input from the user, optionally with a default value.'''
+    ui = UI.instance()
+    return ui.validated_input(message, default_value, is_valid)
 
 
 def login_details(prompt, user, password):

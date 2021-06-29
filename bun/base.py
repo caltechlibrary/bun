@@ -9,8 +9,8 @@ Michael Hucka <mhucka@caltech.edu> -- Caltech Library
 Copyright
 ---------
 
-Copyright (c) 2020 by the California Institute of Technology.  This code is
-open-source software released under a 3-clause BSD license.  Please see the
+Copyright (c) 2020-2021 by the California Institute of Technology.  This code
+is open-source software released under a 3-clause BSD license.  Please see the
 file "LICENSE" for more information.
 '''
 
@@ -70,5 +70,6 @@ class UIBase:
     # Methods to ask the user -------------------------------------------------
 
     def file_selection(self, type, purpose, pattern): raise NotImplementedError
+    def validated_input(self, msg, dflt, is_valid):   raise NotImplementedError
     def login_details(self, prompt, user, pswd):      raise NotImplementedError
     def confirm(self, question):                      raise NotImplementedError
