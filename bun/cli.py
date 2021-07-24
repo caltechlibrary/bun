@@ -93,8 +93,9 @@ class CLI(UIBase):
 
         if show_banner and not be_quiet:
             # We need the plain_text version in any case, to calculate length.
-            plain_text = f'Welcome to {name}: {subtitle}'
-            fancy_text = f'Welcome to [standout]{name}[/]: {subtitle}'
+            subtitle_part = f': {subtitle}' if subtitle else ''
+            plain_text = f'Welcome to {name}{subtitle_part}'
+            fancy_text = f'Welcome to [standout]{name}[/]{subtitle_part}'
             text = fancy_text if use_color else plain_text
             terminal_width = shutil.get_terminal_size().columns or 80
             odd_adjustment = 0 if (terminal_width % 2 == 0) else 2
