@@ -2,6 +2,11 @@
 
 ## Version 0.0.7
 
+This release fixes a bug when no subtitle is provided to `UI(...)`.
+
+
+## Version 0.0.7
+
 This version slightly tweaks the colors, again, for Windows.
 
 
